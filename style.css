@@ -1,0 +1,152 @@
+/* ---------- Basic setup ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #ffffff;
+  color: #1a2233;
+  line-height: 1.5;
+}
+
+.container { max-width: 1050px; margin: 0 auto; padding: 0 20px; }
+.hidden { display: none !important; }
+
+/* ---------- Navigation bar ---------- */
+.navbar { background: #0f1c36; }
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 10px; padding-top: 14px; padding-bottom: 14px;
+}
+.logo { color: #fff; font-size: 24px; font-weight: 700; text-decoration: none; }
+.nav-links { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+.nav-links a {
+  color: #c9d3e6; text-decoration: none; font-size: 14px; padding: 6px 0;
+  border-bottom: 2px solid transparent;
+}
+.nav-links a.active { color: #fff; border-bottom-color: #3b82f6; font-weight: 600; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  background: #1d6ef0; color: #fff; border: 1px solid #1d6ef0;
+  padding: 11px 26px; font-size: 14px; font-weight: 600;
+  border-radius: 3px; cursor: pointer; font-family: inherit;
+}
+.btn:hover { background: #1558c4; }
+.btn-outline { background: #fff; color: #1a2233; border-color: #c8cfda; }
+.btn-outline:hover { background: #f1f4f9; }
+.btn-small { padding: 7px 18px; }
+.btn-full { width: 100%; margin-top: 14px; }
+
+/* ---------- Common page parts ---------- */
+.page { padding: 30px 0 50px; }
+h2 { font-size: 28px; }
+.subtitle { color: #6b7587; font-size: 14px; margin: 4px 0 24px; }
+
+/* ---------- Home ---------- */
+.hero { background: #f4f6fa; padding: 50px 36px; }
+.tagline { font-size: 13px; letter-spacing: 1px; color: #4a5568; margin-bottom: 12px; }
+.hero h1 { font-size: 44px; line-height: 1.15; margin-bottom: 16px; }
+.hero-text { font-size: 17px; margin-bottom: 26px; }
+.hero .btn { margin-right: 10px; margin-bottom: 8px; }
+
+.features {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  border: 1px solid #e1e6ee; box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  margin-top: 24px;
+}
+.feature { text-align: center; padding: 28px 16px; border-right: 1px solid #e1e6ee; }
+.feature:last-child { border-right: none; }
+.feature h3 { font-size: 17px; margin-bottom: 6px; }
+.feature p { font-size: 13px; color: #6b7587; }
+
+/* ---------- Plans ---------- */
+.plan-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.plan {
+  border: 1px solid #dde3ec; box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  display: flex; flex-direction: column;
+}
+.plan-head { padding: 22px 18px 14px; background: #f8f9fc; border-bottom: 1px solid #e8ecf3; }
+.plan-head h3 { font-size: 20px; margin-bottom: 14px; }
+.price { font-size: 26px; font-weight: 700; }
+.price small { font-size: 13px; font-weight: 400; color: #4a5568; }
+.plan ul { list-style: none; padding: 18px; flex: 1; }
+.plan li { font-size: 13px; margin-bottom: 10px; }
+.plan li::before { content: "✔"; margin-right: 10px; font-size: 12px; }
+.plan .btn { margin: 0 18px 20px; }
+
+/* ---------- Forms ---------- */
+.form-box {
+  border: 1px solid #e1e6ee; box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  padding: 18px; max-width: 700px;
+}
+label { display: block; font-size: 13px; font-weight: 600; margin: 12px 0 5px; }
+input, select {
+  width: 100%; padding: 10px 12px; font-size: 14px; font-family: inherit;
+  border: 1px solid #cdd4df; border-radius: 3px; background: #fff;
+}
+input:focus, select:focus { outline: 2px solid #bcd3fb; border-color: #1d6ef0; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 4px; }
+.row .btn { margin-top: 14px; }
+.fee-box {
+  background: #eceff3; padding: 10px 14px; margin-top: 12px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.fee-box span { font-size: 13px; color: #4a5568; }
+.fee-box strong { font-size: 22px; }
+
+.msg { margin-top: 14px; font-size: 13px; padding: 0; }
+.msg.error { background: #fdecec; color: #a12020; border: 1px solid #f3c1c1; padding: 10px 12px; }
+.msg.success { background: #e8f6ec; color: #1d6b35; border: 1px solid #b9e0c4; padding: 10px 12px; }
+.msg a { color: inherit; font-weight: 600; }
+
+/* ---------- Trainers ---------- */
+.trainer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.trainer {
+  border: 1px solid #dde3ec; box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  padding: 20px 16px; text-align: center; background: #fafbfd;
+}
+.avatar {
+  width: 64px; height: 64px; border-radius: 50%; background: #e3e7ee; color: #4a5568;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 20px; margin: 0 auto 10px;
+}
+.trainer h3 { font-size: 18px; }
+.trainer .spec { font-size: 13px; font-weight: 600; margin-bottom: 12px; }
+.trainer .desc { font-size: 13px; color: #6b7587; text-align: left; min-height: 60px; }
+.trainer .btn { width: 100%; margin-top: 12px; }
+
+/* ---------- Membership & attendance ---------- */
+.inline-label { display: inline-block; margin-right: 8px; }
+.member-select { width: auto; min-width: 220px; margin-bottom: 14px; }
+.summary {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+  border: 1px solid #e1e6ee; box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  padding: 16px 20px; margin-bottom: 18px;
+}
+.summary span { display: block; font-size: 12px; color: #4a5568; }
+.summary strong { font-size: 15px; }
+.badge { display: inline-block; padding: 1px 10px; font-size: 13px !important; }
+.badge.active { background: #dff3e4; color: #1d6b35; }
+.badge.expired { background: #fbe0e0; color: #a12020; }
+.badge.upcoming { background: #fff1d6; color: #8a5a00; }
+
+.attendance-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 18px; }
+.box { border: 1px solid #e1e6ee; box-shadow: 0 1px 4px rgba(0,0,0,0.06); padding: 16px; }
+.box h3 { font-size: 18px; margin-bottom: 10px; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { text-align: left; padding: 8px 10px; border: 1px solid #e1e6ee; }
+th { background: #f4f6fa; }
+.present { background: #dff3e4; color: #1d6b35; padding: 1px 10px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 800px) {
+  .plan-grid, .trainer-grid, .features, .attendance-grid { grid-template-columns: 1fr; }
+  .summary { grid-template-columns: 1fr 1fr; }
+  .feature { border-right: none; border-bottom: 1px solid #e1e6ee; }
+  .nav-links { gap: 16px; }
+  .hero h1 { font-size: 34px; }
+}
+@media (max-width: 480px) {
+  .row { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitZone - Gym & Fitness Center Membership Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation bar -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo" data-page="home">FitZone</a>
+      <nav class="nav-links">
+        <a href="#" data-page="home">Home</a>
+        <a href="#" data-page="plans">Plans</a>
+        <a href="#" data-page="trainers">Trainers</a>
+        <a href="#" data-page="book">Book Slot</a>
+        <button class="btn btn-small" data-page="membership">Login</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- HOME -->
+    <section id="home" class="page">
+      <div class="hero">
+        <p class="tagline">FITNESS FOR A BETTER YOU</p>
+        <h1>Fitness for a<br>Healthier You</h1>
+        <p class="hero-text">Join FitZone and take a step towards<br>a stronger and healthier lifestyle.</p>
+        <button class="btn" data-page="plans">View Plans</button>
+        <button class="btn btn-outline" data-page="book">Book a Trainer Slot</button>
+      </div>
+
+      <div class="features">
+        <div class="feature">
+          <h3>Flexible Plans</h3>
+          <p>Choose a plan<br>that suits you</p>
+        </div>
+        <div class="feature">
+          <h3>Expert Trainers</h3>
+          <p>Get guidance<br>from certified trainers</p>
+        </div>
+        <div class="feature">
+          <h3>Track Attendance</h3>
+          <p>Stay consistent<br>with your fitness goals</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEMBERSHIP PLANS (cards are created by script.js) -->
+    <section id="plans" class="page hidden">
+      <h2>Membership Plans</h2>
+      <p class="subtitle">Choose a plan that fits your fitness goals</p>
+      <div id="planList" class="plan-grid"></div>
+    </section>
+
+    <!-- MEMBER REGISTRATION -->
+    <section id="register" class="page hidden">
+      <h2>Member Registration</h2>
+      <p class="subtitle">Fill in your details to purchase a membership</p>
+
+      <form id="regForm" class="form-box" novalidate>
+        <label for="fullName">Full Name *</label>
+        <input type="text" id="fullName" placeholder="Enter full name">
+
+        <label for="mobile">Mobile Number *</label>
+        <input type="text" id="mobile" placeholder="Enter mobile number" maxlength="10">
+
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" placeholder="Enter email address">
+
+        <div class="row">
+          <div>
+            <label for="age">Age *</label>
+            <input type="number" id="age" placeholder="Enter age">
+          </div>
+          <div>
+            <label for="gender">Gender *</label>
+            <select id="gender">
+              <option value="">Select gender</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <label for="planSelect">Select Plan *</label>
+        <select id="planSelect"></select>
+
+        <div class="row">
+          <div>
+            <label for="startDate">Start Date *</label>
+            <input type="date" id="startDate">
+          </div>
+          <div class="fee-box">
+            <span>Total Fee</span>
+            <strong id="totalFee">₹0</strong>
+          </div>
+        </div>
+
+        <div class="row">
+          <button type="submit" class="btn">Register Member</button>
+          <button type="button" id="resetBtn" class="btn btn-outline">Reset</button>
+        </div>
+        <div id="regMsg" class="msg"></div>
+      </form>
+    </section>
+
+    <!-- TRAINERS (cards are created by script.js) -->
+    <section id="trainers" class="page hidden">
+      <h2>Our Trainers</h2>
+      <p class="subtitle">Book a session with our certified trainers</p>
+      <div id="trainerList" class="trainer-grid"></div>
+    </section>
+
+    <!-- BOOK A TRAINER SLOT -->
+    <section id="book" class="page hidden">
+      <h2>Book a Trainer Slot</h2>
+      <p class="subtitle">Select a trainer, date and time for your session</p>
+
+      <form id="bookForm" class="form-box" novalidate>
+        <label for="trainerSelect">Select Trainer *</label>
+        <select id="trainerSelect"></select>
+
+        <label for="bookDate">Select Date *</label>
+        <input type="date" id="bookDate">
+
+        <label for="slotSelect">Select Time Slot *</label>
+        <select id="slotSelect"></select>
+
+        <button type="submit" class="btn btn-full">Book Slot</button>
+        <div id="bookMsg" class="msg"></div>
+      </form>
+    </section>
+
+    <!-- MY MEMBERSHIP & ATTENDANCE -->
+    <section id="membership" class="page hidden">
+      <h2>My Membership</h2>
+      <p class="subtitle">View your membership details and mark attendance</p>
+
+      <!-- Shown when nobody has registered -->
+      <div id="noMember" class="form-box hidden">
+        <p>No member has registered yet. Please register for a plan first.</p>
+        <button class="btn" data-page="plans">View Plans</button>
+      </div>
+
+      <div id="memberArea" class="hidden">
+        <label for="memberSelect" class="inline-label">Member:</label>
+        <select id="memberSelect" class="member-select"></select>
+
+        <div class="summary">
+          <div><span>Plan</span><strong id="mPlan"></strong></div>
+          <div><span>Start Date</span><strong id="mStart"></strong></div>
+          <div><span>Expiry Date</span><strong id="mExpiry"></strong></div>
+          <div><span>Status</span><strong id="mStatus" class="badge"></strong></div>
+        </div>
+
+        <div class="attendance-grid">
+          <div class="box">
+            <h3>Mark Attendance</h3>
+            <label for="attDate">Date *</label>
+            <input type="date" id="attDate">
+            <button id="markBtn" class="btn btn-full">Mark Present</button>
+            <div id="attMsg" class="msg"></div>
+          </div>
+
+          <div class="box">
+            <h3>Attendance History</h3>
+            <table>
+              <thead><tr><th>Date</th><th>Status</th></tr></thead>
+              <tbody id="attBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
